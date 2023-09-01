@@ -66,3 +66,4 @@ class TodoList {
 }
 const todo = new TodoList();
 todo.reload();
+todo.displayItems()
