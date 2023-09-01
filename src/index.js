@@ -1,9 +1,13 @@
 import './style.css';
 import reload from './assets/reload.svg';
-import entericonss from './assets/EnterIcon.svg';
-import data from './dataArray.js';
+import entericon from './assets/EnterIcon.svg';
+import { data } from './dataArray.js';
 import Trash from './assets/TrashBasket.svg';
 
+const loadImg = document.querySelector('.reload');
+const entericons = document.querySelector('.enter_icon');
+loadImg.src = reload;
+entericons.src = entericon;
 class TodoList {
   constructor() {
     this.todoList = document.getElementById('todo_list');
@@ -11,8 +15,6 @@ class TodoList {
     this.clearAllButton = document.getElementById('clear_all_button');
     this.reloadButton = document.getElementById('reload');
     this.dataArray = data;
-
-    this.displayItems();
 
     this.reload();
   }
@@ -49,10 +51,6 @@ class TodoList {
 
           this.todoList.appendChild(todoItem);
         }
-        const loadImg = document.querySelector('.reload');
-        const entericons = document.querySelector('.enter_icon');
-        loadImg.src = reload;
-        entericons.src = entericonss;
       }
 
       clearList = () => {
@@ -67,4 +65,4 @@ class TodoList {
       }
 }
 const todo = new TodoList();
-todo.displayItems();
+todo.reload();
