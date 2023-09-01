@@ -26,4 +26,6 @@ const data = [
   },
 ];
 
-export default { data };
+const linter = 1;
+
+export { data, linter };
