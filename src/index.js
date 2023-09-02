@@ -1,7 +1,6 @@
 import './style.css';
 import reload from './assets/reload.svg';
 import entericonss from './assets/EnterIcon.svg';
-// import data from './dataArray.js';
 import Trash from './assets/TrashBasket.svg';
 import Items from './items.js';
 
