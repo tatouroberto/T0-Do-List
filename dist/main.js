@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _list_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./list.js */ \"./src/list.js\");\n\r\n\r\nconst todo = new _list_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\r\ntodo.display();\n\n//# sourceURL=webpack://webpack_template/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _list_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./list.js */ \"./src/list.js\");\n\r\n\r\n\r\n\r\nconst todo = new _list_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\r\ntodo.reload();\r\ntodo.displayItems();\r\n\n\n//# sourceURL=webpack://webpack_template/./src/index.js?");
 
 /***/ }),
 
