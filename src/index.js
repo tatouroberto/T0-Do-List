@@ -1,4 +1,4 @@
-todolist-interactive
+
 import TodoList from './list.js';
 
 
