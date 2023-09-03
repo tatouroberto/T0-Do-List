@@ -1,4 +1,7 @@
+todolist-interactive
 import TodoList from './list.js';
 
+
 const todo = new TodoList();
-todo.display();
+todo.reload();
+todo.displayItems();
