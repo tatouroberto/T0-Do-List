@@ -1,27 +1,22 @@
 import './style.css';
 import reload from './assets/reload.svg';
-import entericonss from './assets/EnterIcon.svg';
+import entericon from './assets/EnterIcon.svg';
+import { data } from './dataArray.js';
 import Trash from './assets/TrashBasket.svg';
 import Items from './items.js';
 
+const loadImg = document.querySelector('.reload');
+const entericons = document.querySelector('.enter_icon');
+loadImg.src = reload;
+entericons.src = entericon;
 class TodoList {
   constructor() {
     this.todoList = document.getElementById('todo_list');
     this.todoDescription = document.getElementById('description');
     this.clearAllButton = document.getElementById('clear_all_button');
     this.reloadButton = document.getElementById('reload');
-    this.todos = JSON.parse(localStorage.getItem('todo')) || [];
-    this.todoDescription.addEventListener('keydown', (event) => {
-      if (event.code === 'Enter' || event.code === 'NumpadEnter') {
-        if (this.todoDescription.value !== '') {
-          this.addItem(event);
-        }
-      }
-    });
-    if (localStorage) {
-      this.display();
-    }
-    this.removeAll();
+    this.dataArray = data;
+
     this.reload();
   }
 
@@ -109,12 +104,22 @@ class TodoList {
       });
     }
 
-    removeItem = (event) => {
-      const itemPosition = Number(event.target.id);
-      const toRemoveItem = this.todos.filter((task) => task.index !== itemPosition);
-      this.todos = [...toRemoveItem];
-      for (let i = 0; i < this.todos.length; i += 1) {
-        this.todos[i].index = i + 1;
+          const todoItemDescription = document.createElement('span');
+          todoItemDescription.classList.add('description');
+          if (todo.completed === true) {
+            todoItemDescription.classList.add('completed');
+          }
+          todoItemDescription.textContent = `${todo.description}`;
+          todoItem.appendChild(todoItemDescription);
+
+          const trashIcon = document.createElement('img');
+          trashIcon.src = Trash;
+          trashIcon.classList.add('trash');
+          todoItem.appendChild(trashIcon);
+          trashIcon.id = this.dataArray[i].index;
+
+          this.todoList.appendChild(todoItem);
+        }
       }
       localStorage.setItem('todo', JSON.stringify(this.todos));
       this.display();
@@ -144,4 +149,5 @@ class TodoList {
     };
 }
 const todo = new TodoList();
-todo.display();
+todo.reload();
+todo.displayItems();
